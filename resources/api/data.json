@@ -1,0 +1,15 @@
+[
+  {
+    "title": "New York Times Bestseller Books",
+    "date": "Developed January - February 2022",
+    "description": "This app (coded with Java) allows users to search through a large list of New York Times bestseller books by their publish date or by the number of weeks they were on the list.",
+    "mediaLink": "resources/images/nybooks.png"
+  },
+
+  {
+    "title": "Green Haul Grocery App",
+    "date": "Developed Fall 2023",
+    "description": "This app helps users to live more sustainably by allowing them to search for sustainable food products, create shopping lists for these items, find local agricultural events, and tutorials on sustainable practices.",
+    "mediaLink": "resources/images/greenhaul.png"
+  }
+]

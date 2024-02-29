@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seana Seng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" crossorigin="anonymous">
+    <link href="resources/styles/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="resources/images/logo2.png" alt="Seana's Logo" class="logo">
+    </a>
+
+    <nav>
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href="education.html">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="interests.html">Interests</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="album.html">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="experience.html" id="selected">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="weblinks.html">Links</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="mid">
+    <div class="sidebar">
+        <h2>Contact me</h2>
+        <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xbjnyaod" method="post">
+            <fieldset id="fs-frm-inputs">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" class="form-control" name="name" id="full-name" placeholder="First and Last" required="">
+                </div>
+                <div class="form-group">
+                    <label for="email-address">Email Address</label>
+                    <input type="email" class="form-control" name="_replyto" id="email-address" placeholder="sample@email.com" required="">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" rows="5" name="message" id="message" placeholder="Your Message" required=""></textarea>
+                </div>
+                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <hr>
+
+        <div id="apiDisplay"></div>
+
+        <script>
+            const div = document.getElementById('apiDisplay');
+            const url = 'https://meowfacts.herokuapp.com/';
+
+            const headers = new Headers(
+                {
+                    'Accept': 'application/json'
+                })
+
+            fetch(url, {headers})
+                .then((response) =>
+                {
+                    return  response.json();
+                })
+                .then((data) =>
+                {
+                    console.log(data);
+                    let p = document.createElement('p');
+                    p.innerHTML = `${data.data}`;
+                    div.appendChild(p);
+                })
+                .catch(function (error)
+                {
+                    console.log(error);
+                });
+        </script>
+    </div>
+
+    <div class="content">
+        <h1>Experience</h1>
+
+        <div class="lists">
+            <h2>Volunteer Experience</h2>
+            <ul>
+                <li>assisted in inputting mechanical data in spreadsheets</li>
+                <li>
+                    joined Interact Club in high school
+                    <ul>
+                        <li>donated resources to a dog shelter</li>
+                        <li>sold candy to raise money</li>
+                        <li>assisted in picking up trash outside</li>
+                        <li>assisted the elderly in putting away holiday decorations</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="lists">
+            <h2>Certifications</h2>
+            <ul>
+                <li>working to complete Google Career Certificate program in IT + UX Design</li>
+            </ul>
+        </div>
+
+        <div class="lists">
+            <h2>Skills</h2>
+            <ul>
+                <li>experience in Java, SQL, HTML, CSS, JavaScript</li>
+                <li>experienced in writing, reading, + speaking Spanish</li>
+                <li>experienced in film editing software</li>
+                <li>experienced in photo editing software</li>
+                <li>experienced in UI design software</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        <a href="#">LinkedIn</a> |
+        <a href="#">Tumblr</a> |
+        <a href="#">Github</a>
+        <br>
+        &copy;Copyright 2024
+    </p>
+</footer>
+
+</body>
+</html>
